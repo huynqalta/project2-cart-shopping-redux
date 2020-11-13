@@ -4,3 +4,7 @@
     -Dể thay đổi dữ liệu:thực hiện thông qua việc gọi props
     -Được viết :bằng tay
 *Container Component
+    -Mục đích:cách mọi thứ hoạt động(tải dữ liệu ,cập nhập state)
+    -Nhận thức về Redux: Có.
+    -Dể thay đổi dữ liệu:Gọi lên (subrice) lên  state trên redux
+    -Được viết :bằng tay
