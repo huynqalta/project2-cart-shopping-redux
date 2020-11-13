@@ -1,0 +1,6 @@
+*Presentational Components
+    -Mục đích:Mọi thứ trông như css , tag...
+    -Nhận thức về Redux:không.
+    -Dể thay đổi dữ liệu:thực hiện thông qua việc gọi props
+    -Được viết :bằng tay
+*Container Component
