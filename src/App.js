@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Message from './components/Message'
 import Products from './components/Products'
+import ProductsContainer from './containers/ProductsContainer'
 
 function App() {
     return (    
@@ -11,7 +12,7 @@ function App() {
             <Header />
             <main id="mainContainer">
                 <div className="container">
-                    <Products />
+                    <ProductsContainer />
                     <Message />
                     <Cart />
                 </div>
