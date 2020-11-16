@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import * as mess from '../constants/Messages'
 
 export default class Product extends Component {
     render() {
         var {product}=this.props;
+        console.log("product",product);
         return (
             <div className="col-lg-4 col-md-6 mb-r">
                 <div className="card text-center card-cascade narrower">
@@ -27,7 +29,9 @@ export default class Product extends Component {
                             <span className="left">Giá:{product.price}$</span>
                             <span className="center">Hiện có :{product.inventory}</span>
                             <span className="right">
-                                <a className="btn-floating blue-gradient" data-toggle="tooltip" data-placement="top" title data-original-title="Add to Cart">
+                                <a
+                                onClick={()=>this.addToCart(product,product.inventory-1)}
+                                className="btn-floating blue-gradient" data-toggle="tooltip" data-placement="top" title data-original-title="Add to Cart">
                                     <i className="fa fa-shopping-cart" />
                                 </a>
                             </span>
@@ -46,5 +50,13 @@ export default class Product extends Component {
             result.push(<i key={j+i} className="fa fa-star-o"></i>)
         }
         return result;
+    }
+    addToCart=(product,inventory)=>{
+        this.props.addToCart(product);
+        this.props.onChangeMessage(mess.MSG_ADD_TO_CART_SUCCESS);
+        if(inventory>0){
+            this.props.onUpdateInventory(product,inventory);
+        }
+       
     }
 }

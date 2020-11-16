@@ -19,11 +19,7 @@ export default class Cart extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartItem />
-                            <CartResult />
+                            {this.props.children}
                         </tbody>
                     </table>
                 </div>

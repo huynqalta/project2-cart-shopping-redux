@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class CartResult extends Component {
     render() {
+        var {cart}=this.props;
         return (
             <tr>
                 <td colSpan={3} />
@@ -12,7 +13,7 @@ export default class CartResult extends Component {
                 </td>
                 <td>
                     <h4>
-                        <strong>15$</strong>
+                        <strong>{this.showToTalMoust(cart)} $</strong>
                     </h4>
                 </td>
                 <td colSpan={3}>
@@ -22,5 +23,15 @@ export default class CartResult extends Component {
                 </td>
             </tr>
         )
+    }
+    showToTalMoust = (cart)=>{
+        var money=0;
+        if(cart.length>0){
+            for(var i=0;i<cart.length;i++){
+                money+=cart[i].product.price*cart[i].quantity;
+            }
+        }
+        
+        return money;
     }
 }
